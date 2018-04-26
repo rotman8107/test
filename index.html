@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head><title>Simple quiz</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+body{
+	background-color:tomato;
+	color: white;
+    padding: 10px;
+}
+
+p{
+color:black;
+font-size: 27px;
+font-weight: bold;
+line-height:40px;
+
+}
+.container{
+position: relative;
+margin: 0 auto;
+text-align: center; 
+}
+
+.quiz{
+display:none;
+}
+
+#image1{
+position:absolute;
+display:none;
+}
+#image2{
+position:absolute;
+display:none;
+}
+#image3{
+position:absolute;
+display:none;
+}
+.popup{
+width:400px;
+height:180px;
+background-color: lightblue;
+border-radius:16px;
+margin: 0 auto;
+position: relative;
+}
+
+a{
+text-transform: uppercase;
+padding: 15px 10px;
+text-decoration:none;
+text-align: center;
+font-size: 20px;
+font-weight:bold;
+line-height: 10px;
+background-color:black;
+color: lightblue;
+}
+
+h1{
+	border-radius: 60px;
+	background: #9ca4af;
+	color: black;
+	text-align: center;
+}
+
+input[type=button] {
+	display: block;
+	margin : 0 auto;
+	border: none;
+	background-color: black;
+	border-radius: 8px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+input:hover {background-color: #7b7737}
+
+input:active {
+  background-color: #7b7737;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body>
+<div class ="container">
+	<div class="popup">
+	<p>ברוכים הבאים לחידון<br>
+	לפניכם שלוש שאלות <br>
+	בהצלחה
+	</p>
+	<button class="options">להתחלה לחץ כאן</button></div>
+	</div>
+
+</div>
+<div class="quiz">
+<h1>?היכן עובר נהר האמזונס</h1>
+
+<form class="qu1">
+<img id='image1' src="amazonas.jpg">
+<input type="button" id="btn1-1" value="אסיה"></input>
+<br>
+<input type="button" id="btn1-2" value="אמריקה הדרומית"></input>
+<br>
+<input type="button" id="btn1-3" value="אפריקה"></input>
+</form>
+
+<br>
+<h1>?מהי בירת וייטנאם</h1>
+
+<form class="qu2">
+<img id="image2" src="hanoy.jpg">
+<input type="button" id="btn2-1" value="האנוי"></input>
+<br>
+<input type="button" id="btn2-2" value="פנום פן"></input>
+<br>
+<input type="button" id="btn2-3" value="מונטיוודאו"></input>
+</form>
+
+<h1>?"מי אמר "ממשלה של העם, על ידי העם, למען העם</h1>
+
+<form class="qu3">
+<img id="image3" src="linkoln.jpg">
+<input type="button" id="btn3-1" value="וינסטון צ'רציל"></input>
+<br>
+<input type="button" id="btn3-2" value="מרטין לותר קינג"></input>
+<br>
+<input type="button" id="btn3-3" value="אברהם לינקולן"></input>
+</form>
+</div>
+
+
+<script>
+$(function(){
+	$('.options').click(function(){
+		$('.quiz').show('slow');
+	});
+});
+$(function(){
+	$('.qu1').click(function(){
+		$('#image1').toggle('slow');
+	});
+});
+$(function(){
+	$('.qu2').click(function(){
+		$('#image1').hide('slow');
+	});
+	$('.qu3').click(function(){
+		$('#image1').hide('slow');
+	});
+});
+$(function(){
+	$('.qu2').click(function(){
+		$('#image2').toggle('slow');
+	});
+});
+$(function(){
+	$('.qu1').click(function(){
+		$('#image2').hide('slow');
+	});
+	$('.qu3').click(function(){
+		$('#image2').hide('slow');
+	});
+});
+$(function(){
+	$('.qu3').click(function(){
+		$('#image3').toggle('slow');
+	});
+});
+$(function(){
+	$('.qu1').click(function(){
+		$('#image3').hide('slow');
+	});
+	$('.qu2').click(function(){
+		$('#image3').hide('slow');
+	});
+});
+</script>
+</body>
+</html>
